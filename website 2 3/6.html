@@ -17,6 +17,9 @@
             padding: 20px;
             max-width: 1200px;
             margin: auto;
+            display: flex;
+            gap: 20px;
+            padding: 0px;
         }
 
         .header {
@@ -26,36 +29,36 @@
         }
 
         .header h2 {
-            font-size: 1.8em;
+            font-size: 1.8em; /* 调整标题字号 */
             margin: 0;
         }
 
         .header span {
             color: #2E7DA3;
-            font-size: 0.9em;
+            font-size: 0.9em; /* 调整副标题字号 */
         }
 
         .header .separator {
             color: #CFABEB;
             margin: 0 5px;
-            font-size: 0.9em;
+            font-size: 0.9em; /* 调整分隔符字号 */
         }
 
         .header .title {
             color: #000000;
-            font-size: 1.2em;
+            font-size: 1.2em; /* 调整标题字号 */
         }
 
         .search-form {
             display: flex;
             gap: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* 减小搜索表单底部间距 */
             margin-left: 20px;
         }
 
         .form-control {
             padding: 8px;
-            font-size: 14px;
+            font-size: 14px; /* 调整输入框字号 */
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 250px;
@@ -63,7 +66,7 @@
 
         .btn {
             padding: 8px 15px;
-            font-size: 14px;
+            font-size: 14px; /* 调整按钮字号 */
             cursor: pointer;
             background-color: #559DC5;
             color: #fff;
@@ -72,29 +75,140 @@
         }
 
         .left-column {
-            margin-bottom: 10px;
+            flex: 1;
+            margin-bottom: 10px; /* 减小左列底部间距 */
         }
 
         .slider img {
             width: 100%;
             height: auto;
-            margin-top: 0;
+            margin-top: 0; /* 取消图片顶部间距 */
+            margin-bottom: 10px; /* 减小图片底部间距 */
+        }
+
+        .right-column {
+            flex: 2;
+        }
+
+        .basic-info {
+            margin-bottom: 20px;
+        }
+
+        .basic-info h2 {
             margin-bottom: 10px;
         }
+
+        .additional-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px; /* 增大间距 */
+            flex-wrap: nowrap; /* 防止换行 */
+        }
+
+        .additional-info div, .evaluation-buttons div {
+            flex: 1 1 20%; /* 控制每个信息项的宽度和灵活性 */
+            background-color: #B74330; /* 恢复原始颜色 */
+            color: white;
+            padding: 8px 15px; /* 恢复按钮的原始填充 */
+            border-radius: 5px; /* 恢复圆角 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px; /* 调整字体大小 */
+            white-space: nowrap; /* 防止换行 */
+            overflow: hidden; /* 超出部分隐藏 */
+            text-overflow: ellipsis; /* 显示省略号 */
+        }
+
+        .evaluation1-buttons div {
+            flex: 1 1 20%; /* 控制每个信息项的宽度和灵活性 */
+            background-color: #559DC5; /* 恢复原始颜色 */
+            color: white;
+            padding: 8px 15px; /* 恢复按钮的原始填充 */
+            border-radius: 5px; /* 恢复圆角 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px; /* 调整字体大小 */
+            white-space: nowrap; /* 防止换行 */
+            overflow: hidden; /* 超出部分隐藏 */
+            text-overflow: ellipsis; /* 显示省略号 */
+        }
+
+        .info-item.info-1 {
+            background-color: #CFCABE; /* 红色 */
+            color: white;
+        }
+
+        .info-item.info-2 {
+            background-color: #F8D4B3; /* 深蓝色 */
+            color: white;
+        }
+
+        .info-item.info-3 {
+            background-color: #D1E3EF; /* 浅蓝色 */
+            color: white;
+        }
+
+        .info-item.info-4 {
+            background-color: #2E7DA3; /* 橙色 */
+            color: white;
+        }
+
+        .evaluation-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .devil-version {
+            background-color: #4dff4d; /* 恢复原始颜色 */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .angel-version {
+            background-color: #559DC5; /* 恢复原始颜色 */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .evaluation-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* 调整按钮和说明文字之间的间距 */
+        }
+
+        .evaluation-text {
+            font-size: 14px; /* 调整说明文字的字体大小 */
+        }
+
+        .chart-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 40vh; /* Adjust height as needed */
+              padding: 0px;
+          }
+
+
+    </style>
+  <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </style>
 </head>
 <body>
 
     <div class="header">
-      <div class="header">
-          <div>
-            <a href="#" class="active" onclick ="window.location.href = '4.html';">选课</a>
-              <a href="#" style="color: black;">影视广告</a>
-          </div>
+        <div>
+            <a href="#" class="active" onclick="window.location.href = '4.html';">选课</a>
+            <a href="#" style="color: black;">影视广告</a>
+        </div>
         <input type="text" placeholder="搜索课程" style="opacity:0">
-          <img class="avatar" src="OIP.jpg" alt="User Avatar">
-      </div>
-
+        <img class="avatar" src="OIP.jpg" alt="User Avatar">
     </div>
 
     <div class="container">
@@ -108,27 +222,80 @@
             <div class="basic-info">
                 <h2>基础信息</h2>
                 <div class="additional-info">
-                    <p>20230608</p>
-                    <p>广告学院</p>
-                    <p>何和呵</p>
-                    <p>8:00-11:50</p>
+                  <div class="info-item info-1">20230608</div>
+                  <div class="info-item info-2">广告学院</div>
+                  <div class="info-item info-3">何和呵</div>
+                  <div class="info-item info-4">8:00-11:50</div>
                 </div>
-            </div>
-            <div id="chart">
-            </div>
+             </div>
+
             <div class="course-info">
                 <h2>课程内容</h2>
-                  <p>课程简介：本课程是广告学院设计专业本科生的必修专业课。主要讲授：影视广告的发展历程、影视广告的特性、影视广告的基本类型、影视广告的构成要素以及创作和制作的流程。
-                  </p>
+                <p>本课程是广告学院设计专业本科生的必修专业课。主要讲授：影视广告的发展历程、影视广告的特性、影视广告的基本类型、影视广告的构成要素以及创作和制作的流程。</p>
                 <h2>课程评价</h2>
                 <div class="evaluation-buttons">
-                    <button class="devil-version" id="button" onclick ="window.location.href = '影视广告devil.html';">恶魔版</button>
-                    <p>请做好准备，你将看到一些课程差评。</p>
-                    <button class="angel-version" id="button" onclick ="window.location.href = '影视广告.html';">天使版</button>
-                    <p>你将看到一些课程好评。</p>
+                    <div class="devil-version" id="button" onclick="window.location.href = '影视广告devil.html';">恶魔版</div>
+                    <p class="evaluation-text">请做好准备，你将看到一些课程差评。</p>
+                </div>
+                <div class="evaluation1-buttons">
+                    <div class="angel-version" id="button" onclick="window.location.href = '影视广告.html';">天使版</div>
+                    <p class="evaluation-text">你将看到一些课程好评。</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Correct placement of chart container -->
+            <div class="chart-container">
+                <div class="chart-title">评价</div>
+                <canvas id="donut-chart1"></canvas>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Script to initialize Chart.js and create the donut chart -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx1 = document.getElementById('donut-chart1').getContext('2d');
+        var myChart1 = new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['事多', '签到多', '给分低', '作业少', '学到东西', '给分高'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [25, 0, 0, 25, 30, 20],
+                    backgroundColor: [
+                        '#F8D4B3',
+                        '#CFCABE',
+                        '#B74330',
+                        '#D1E3EF',
+                        '#2E7DA3',
+                        '#2F4861'
+                    ],
+                    borderWidth: 1,
+                    flex: 10
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    });
+</script>
+
 </body>
 </html>

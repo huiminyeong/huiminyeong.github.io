@@ -4,216 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>课程评价</title>
-    <link rel="stylesheet" href="2style.css">
+    <link rel="stylesheet" href="style.css">
    <link rel="shortcut icon" href="cuc.png" type="image/png">
-    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-68MR88MQHR"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-68MR88MQHR'); </script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-68MR88MQHR"></script>
+   <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-68MR88MQHR'); </script>
+   <script src="js/js.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-            background-image: url('background.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
 
-        .top-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .top-section h2 {
-            color: #2E7DA3;
-            font-size: 1.5em;
-            margin: 0;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: #2F4861;
-            font-size: 1.1em;
-        }
-
-        .search-form {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .form-control {
-            padding: 8px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 70%;
-        }
-
-        .btn {
-            padding: 8px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #ffffff;
-            color: #559DC5;
-            border: 1px solid #559DC5;
-            border-radius: 5px;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
-        }
-
-        .custom-buttons {
-            margin-top: 20px;
-        }
-
-        .review-container {
-            margin-top: 20px;
-        }
-
-        .review-box {
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            width: 70%;
-            box-sizing: border-box;
-        }
-
-        .comment-input-container {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-        }
-
-        #commentInput {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <!-- 修改了选课的超链接，到4.html页面 -->
-      <a href="4.html" class="active">选课</a>
-      <div class="dropdown">
-        <button class="btn dropbtn">版本选择</button>
-        <div class="dropdown-content">
-          <a href="coursepage.html" data-filter="天使版本">天使版本</a>
+
+      <div class="header-le">
+        <a href="index.html" class="active">选课</a>
+        <div class="dropdown">
+          <button class="dropbtn">版本选择</button>
+          <div class="dropdown-content">
+            <a href="设计素描devil.html">恶魔版本</a>
+          </div>
         </div>
       </div>
       <img class="avatar" src="OIP.jpg" alt="User Avatar">
     </div>
-
-    <div class="user-input-container">
-      <div class="review-container">
-        <div class="review-box" id="reviewBox">
-          <p>特别好 特别特别好 特别好 可以学到很多硬核知识</p>
-          <p>好 好 好 好 好 之前是做个小海报 每节课后都会有个小作业不难 会学到很多硬核知识</p>
-          <p>老师很认真很负责，分为三个部分，第一个讲设计基础第二个讲摄影基础第三个讲软件操作AI，线下的话可以去影棚和苹果机房。作业每节课都有，前两个老师作业难度不高，后一个老师作业可能会比较费力气，也就是后期其实还挺累的。线上上课的时候结课作业是设计一张海报。老师人很好，讲话很幽默，问问题也都会很耐心回答，就是很好的一门课。</p>
-          <p>老师专业能力很强</p>
-          <p>讲课非常详细！！！</p>
-          <div class="smiley">
-            <img class="smile" src="smile.png" alt="angle smile">
+    <div class="review-box">
+      <!-- 评论 -->
+      <div  class="boxContent">
+            <!-- 导航栏部分 -->
+          <ul class="table clearfix">
+            <li  class="tabActive">
+              <p>全部</p>
+              <p>10</p>
+            </li>
+            <li  class="">
+              <p>作业少</p>
+              <p>3</p>
+            </li>
+            <li>
+              <p>学到东西</p>
+              <p>3</p>
+            </li>
+            <li>
+              <p>给分高</p>
+              <p>3</p>
+            </li>
+          </ul>
+        <div>
+          <div class="box conAvtive"  id="reviewBox">
+            <p>老师很亲切，课程轻松~</p>
+            <p>学到很多东西</p>
+            <p>老师很少点名</p>
+            <p>老师打分很高！</p>
+            <p>作业不多</p>
+            <p>老师手把手指导，学到很多！</p>
+            <p>收获颇多</p>
+            <p>老师都是尽量打高分的，也学到很多东西~</p>
+            <p>给分巨高！！</p>
+            <p>课程挺轻松的，一边画一边听老师唠嗑</p>
+          </div>
+          <div class="box "  id="">
+            <p>老师很亲切，课程轻松~</p>
+            <p>作业不多</p>
+            <p>课程挺轻松的，一边画一边听老师唠嗑</p>
+          </div>
+          <div class="box" >
+            <p>学到很多东西</p>
+            <p>老师手把手指导，学到很多！</p>
+            <p>收获颇多</p>
+          </div>
+          <div class="box" >
+            <p>老师打分很高！</p>
+            <p>老师都是尽量打高分的，也学到很多东西~</p>
+              <p>给分巨高！！</p>
+          </div>
+        </div>
+        <!-- 评论输入框 -->
+        <div class="comment-input-container">
+          <div class="inputBox">
+            <textarea id="commentInput" class="commentInput1" placeholder="输入您的评论"></textarea>
+            <button type="button" id="btnInput">发布</button>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- 评论输入框 -->
-    <div class="comment-input-container">
-      <div class="review-box">
-        <textarea id="commentInput" placeholder="输入您的评论"></textarea>
+      <div class="smiley">
+        <img class="smile" src="smile.png" alt="angle smile">
       </div>
     </div>
 
-    <script>
-      function submitComment() {
+    <!-- 背景图 -->
+     <img src="right.jpg" alt="" class="bgImg">
 
+    <script>
+      // 清空localStorage内容
+    localStorage.clear();
+      $(".table li").on("click", function() {
+        var divs = $(".box")
+        var lis = $(".table li")
+        lis.removeClass('tabActive')
+        $(this).addClass('tabActive')
+        for (var i = 0; i < lis.length; i ++) {
+          if (lis[i] == this) {
+            divs.removeClass('conAvtive')
+            divs.eq(i).addClass('conAvtive')
+          }
+        }
+      })
+      function submitComment() {
         var comment = document.getElementById('commentInput').value;
         if (comment.trim() !== "") {
-
           var newComment = document.createElement('p');
           newComment.textContent = comment;
-
-
           document.getElementById('reviewBox').appendChild(newComment);
-
-
           saveComment(comment);
-
-        
           document.getElementById('commentInput').value = "";
         }
       }
-
       function saveComment(comment) {
-
         var comments = JSON.parse(localStorage.getItem('coursepage_comments')) || [];
-
         comments.push(comment);
-
         localStorage.setItem('coursepage_comments', JSON.stringify(comments));
       }
-
       function loadComments() {
         var comments = JSON.parse(localStorage.getItem('coursepage_comments')) || [];
         var reviewBox = document.getElementById('reviewBox');
@@ -230,9 +141,14 @@
           submitComment();
         }
       });
-
-
+      document.getElementById('btnInput').addEventListener('click', function(event) {
+          event.preventDefault();
+          submitComment();
+      });
       window.onload = loadComments;
+
+
+
     </script>
   </div>
 </body>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程评价</title>
+    <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" href="cuc.png" type="image/png">
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-68MR88MQHR"></script>
+   <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-68MR88MQHR'); </script>
+   <script src="js/js.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+
+      <div class="header-le">
+        <a href="homepage.html" class="active">选课</a>
+        <div class="dropdown">
+          <button class="dropbtn">版本选择</button>
+          <div class="dropdown-content">
+            <a href="设计素描devil.html">恶魔版本</a>
+          </div>
+        </div>
+      </div>
+      <img class="avatar" src="OIP.jpg" alt="User Avatar">
+    </div>
+    <div class="review-box">
+      <!-- 评论 -->
+      <div  class="boxContent">
+            <!-- 导航栏部分 -->
+          <ul class="table clearfix">
+            <li  class="tabActive">
+              <p>全部</p>
+              <p>10</p>
+            </li>
+            <li  class="">
+              <p>作业少</p>
+              <p>3</p>
+            </li>
+            <li>
+              <p>学到东西</p>
+              <p>3</p>
+            </li>
+            <li>
+              <p>给分高</p>
+              <p>3</p>
+            </li>
+          </ul>
+        <div>
+          <div class="box conAvtive"  id="reviewBox">
+            <p>老师很亲切，课程轻松~</p>
+            <p>学到很多东西</p>
+            <p>老师很少点名</p>
+            <p>老师打分很高！</p>
+            <p>作业不多</p>
+            <p>老师手把手指导，学到很多！</p>
+            <p>收获颇多</p>
+            <p>老师都是尽量打高分的，也学到很多东西~</p>
+            <p>给分巨高！！</p>
+            <p>课程挺轻松的，一边画一边听老师唠嗑</p>
+          </div>
+          <div class="box "  id="">
+            <p>老师很亲切，课程轻松~</p>
+            <p>作业不多</p>
+            <p>课程挺轻松的，一边画一边听老师唠嗑</p>
+          </div>
+          <div class="box" >
+            <p>学到很多东西</p>
+            <p>老师手把手指导，学到很多！</p>
+            <p>收获颇多</p>
+          </div>
+          <div class="box" >
+            <p>老师打分很高！</p>
+            <p>老师都是尽量打高分的，也学到很多东西~</p>
+              <p>给分巨高！！</p>
+          </div>
+        </div>
+        <!-- 评论输入框 -->
+        <div class="comment-input-container">
+          <div class="inputBox">
+            <textarea id="commentInput" class="commentInput1" placeholder="输入您的评论"></textarea>
+            <button type="button" id="btnInput">发布</button>
+          </div>
+        </div>
+      </div>
+      <div class="smiley">
+        <img class="smile" src="smile.png" alt="angle smile">
+      </div>
+    </div>
+
+    <!-- 背景图 -->
+     <img src="right.jpg" alt="" class="bgImg">
+
+    <script>
+      // 清空localStorage内容
+    localStorage.clear();
+      $(".table li").on("click", function() {
+        var divs = $(".box")
+        var lis = $(".table li")
+        lis.removeClass('tabActive')
+        $(this).addClass('tabActive')
+        for (var i = 0; i < lis.length; i ++) {
+          if (lis[i] == this) {
+            divs.removeClass('conAvtive')
+            divs.eq(i).addClass('conAvtive')
+          }
+        }
+      })
+      function submitComment() {
+        var comment = document.getElementById('commentInput').value;
+        if (comment.trim() !== "") {
+          var newComment = document.createElement('p');
+          newComment.textContent = comment;
+          document.getElementById('reviewBox').appendChild(newComment);
+          saveComment(comment);
+          document.getElementById('commentInput').value = "";
+        }
+      }
+      function saveComment(comment) {
+        var comments = JSON.parse(localStorage.getItem('coursepage_comments')) || [];
+        comments.push(comment);
+        localStorage.setItem('coursepage_comments', JSON.stringify(comments));
+      }
+      function loadComments() {
+        var comments = JSON.parse(localStorage.getItem('coursepage_comments')) || [];
+        var reviewBox = document.getElementById('reviewBox');
+        comments.forEach(function(comment) {
+          var newComment = document.createElement('p');
+          newComment.textContent = comment;
+          reviewBox.appendChild(newComment);
+        });
+      }
+
+      document.getElementById('commentInput').addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          submitComment();
+        }
+      });
+      document.getElementById('btnInput').addEventListener('click', function(event) {
+          event.preventDefault();
+          submitComment();
+      });
+      window.onload = loadComments;
+
+
+
+    </script>
+  </div>
+</body>
+</html>
+

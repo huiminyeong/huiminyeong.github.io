@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+    <link rel="stylesheet" href="6.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+            padding: 0px;
+        }
+
+        .header {
+            text-align: left;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+
+        .header h2 {
+            font-size: 1.8em; /* 调整标题字号 */
+            margin: 0;
+        }
+
+        .header span {
+            color: #2E7DA3;
+            font-size: 0.9em; /* 调整副标题字号 */
+        }
+
+        .header .separator {
+            color: #CFABEB;
+            margin: 0 5px;
+            font-size: 0.9em; /* 调整分隔符字号 */
+        }
+
+        .header .title {
+            color: #000000;
+            font-size: 1.2em; /* 调整标题字号 */
+        }
+
+        .search-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px; /* 减小搜索表单底部间距 */
+            margin-left: 20px;
+        }
+
+        .form-control {
+            padding: 8px;
+            font-size: 14px; /* 调整输入框字号 */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        .btn {
+            padding: 8px 15px;
+            font-size: 14px; /* 调整按钮字号 */
+            cursor: pointer;
+            background-color: #559DC5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .left-column {
+            flex: 1;
+            margin-bottom: 10px; /* 减小左列底部间距 */
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+            margin-top: 0; /* 取消图片顶部间距 */
+            margin-bottom: 10px; /* 减小图片底部间距 */
+        }
+
+        .right-column {
+            flex: 2;
+        }
+
+        .basic-info {
+            margin-bottom: 20px;
+        }
+
+        .basic-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .additional-info {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px; /* 增大间距 */
+            flex-wrap: nowrap; /* 防止换行 */
+        }
+
+        .additional-info div, .evaluation-buttons div {
+            flex: 1 1 20%; /* 控制每个信息项的宽度和灵活性 */
+            background-color: #B74330; /* 恢复原始颜色 */
+            color: white;
+            padding: 8px 15px; /* 恢复按钮的原始填充 */
+            border-radius: 5px; /* 恢复圆角 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px; /* 调整字体大小 */
+            white-space: nowrap; /* 防止换行 */
+            overflow: hidden; /* 超出部分隐藏 */
+            text-overflow: ellipsis; /* 显示省略号 */
+        }
+
+        .evaluation1-buttons div {
+            flex: 1 1 20%; /* 控制每个信息项的宽度和灵活性 */
+            background-color: #559DC5; /* 恢复原始颜色 */
+            color: white;
+            padding: 8px 15px; /* 恢复按钮的原始填充 */
+            border-radius: 5px; /* 恢复圆角 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px; /* 调整字体大小 */
+            white-space: nowrap; /* 防止换行 */
+            overflow: hidden; /* 超出部分隐藏 */
+            text-overflow: ellipsis; /* 显示省略号 */
+        }
+
+        .info-item.info-1 {
+            background-color: #CFCABE; /* 红色 */
+            color: white;
+        }
+
+        .info-item.info-2 {
+            background-color: #F8D4B3; /* 深蓝色 */
+            color: white;
+        }
+
+        .info-item.info-3 {
+            background-color: #D1E3EF; /* 浅蓝色 */
+            color: white;
+        }
+
+        .info-item.info-4 {
+            background-color: #2E7DA3; /* 橙色 */
+            color: white;
+        }
+
+        .evaluation-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .devil-version {
+            background-color: #4dff4d; /* 恢复原始颜色 */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .angel-version {
+            background-color: #559DC5; /* 恢复原始颜色 */
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .evaluation-container {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* 调整按钮和说明文字之间的间距 */
+        }
+
+        .evaluation-text {
+            font-size: 14px; /* 调整说明文字的字体大小 */
+        }
+
+        .chart-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 40vh; /* Adjust height as needed */
+              padding: 0px;
+          }
+
+        <style>
+        /* Your existing CSS styles */
+    </style>
+    <!-- Include Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>
+            <a href="#" class="active" onclick="window.location.href = '4.html';">选课</a>
+            <a href="#" style="color: black;">设计素描</a>
+        </div>
+        <input type="text" placeholder="搜索课程" style="opacity:0">
+        <img class="avatar" src="OIP.jpg" alt="User Avatar">
+    </div>
+
+    <div class="container">
+        <div class="left-column">
+            <div class="slider">
+                <img src="class.jpg" alt="Image 1">
+            </div>
+        </div>
+        <div class="right-column">
+            <h1>设计素描</h1>
+            <div class="basic-info">
+                <h2>基础信息</h2>
+                <div class="additional-info">
+                  <div class="info-item info-1">20250608</div>
+                  <div class="info-item info-2">广告学院</div>
+                  <div class="info-item info-3">付小慢</div>
+                  <div class="info-item info-4">8:30-11:50</div>
+                </div>
+             </div>
+
+            <div class="course-info">
+                <h2>课程内容</h2>
+                <p>课程简介：本课程是在基础素描扎实基本功的训练之上，强化对设计形象的创造意识。</p>
+                <h2>课程评价</h2>
+                <div class="evaluation-buttons">
+                    <div class="devil-version" id="button" onclick="window.location.href = '设计素描devil.html';">恶魔版</div>
+                    <p class="evaluation-text">请做好准备，你将看到一些课程差评。</p>
+                </div>
+                <div class="evaluation1-buttons">
+                    <div class="angel-version" id="button" onclick="window.location.href = '设计素描.html';">天使版</div>
+                    <p class="evaluation-text">你将看到一些课程好评。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Correct placement of chart container -->
+            <div class="chart-container">
+                <div class="chart-title">第一个图表</div>
+                <canvas id="donut-chart1"></canvas>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Script to initialize Chart.js and create the donut chart -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var ctx1 = document.getElementById('donut-chart1').getContext('2d');
+        var myChart1 = new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['事多', '签到多', '给分低', '作业少', '学到东西', '给分高'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [10, 0, 0, 30, 30, 30],
+                    backgroundColor: [
+                        '#F8D4B3',
+                        '#CFCABE',
+                        '#B74330',
+                        '#D1E3EF',
+                        '#2E7DA3',
+                        '#2F4861'
+                      ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return tooltipItem.label + ': ' + tooltipItem.raw.toFixed(2);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    });
+</script>
+
+</body>
+</html>
